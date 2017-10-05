@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		59C31C8850E47ABF200BF176 /* Pods_MinimumMVCSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF26D98A2D2D8215795F89D /* Pods_MinimumMVCSample.framework */; };
+		A49C44DD1F86387C00A04E47 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C44DC1F86387C00A04E47 /* Todo.swift */; };
+		A49C44DF1F86635000A04E47 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C44DE1F86635000A04E47 /* Router.swift */; };
 		A4FB71B41F862E5C003F065C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FB71B31F862E5C003F065C /* AppDelegate.swift */; };
 		A4FB71B61F862E5C003F065C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FB71B51F862E5C003F065C /* ViewController.swift */; };
 		A4FB71B91F862E5C003F065C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FB71B71F862E5C003F065C /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		7F2643B965BE60AF57CB7FB2 /* Pods-MinimumMVCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinimumMVCSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinimumMVCSample/Pods-MinimumMVCSample.release.xcconfig"; sourceTree = "<group>"; };
 		99C79C432A383A00B5FE024B /* Pods-MinimumMVCSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinimumMVCSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinimumMVCSampleTests/Pods-MinimumMVCSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		A2AEF2D87E06B566ABC01B4C /* Pods-MinimumMVCSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinimumMVCSampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinimumMVCSampleUITests/Pods-MinimumMVCSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A49C44DC1F86387C00A04E47 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		A49C44DE1F86635000A04E47 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A4FB71B01F862E5C003F065C /* MinimumMVCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimumMVCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FB71B31F862E5C003F065C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4FB71B51F862E5C003F065C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A49C44E01F86635C00A04E47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A49C44DC1F86387C00A04E47 /* Todo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A49C44E11F86637600A04E47 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4FB71B51F862E5C003F065C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A4FB71A71F862E5C003F065C = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				A4FB71B31F862E5C003F065C /* AppDelegate.swift */,
-				A4FB71B51F862E5C003F065C /* ViewController.swift */,
+				A49C44E11F86637600A04E47 /* Controller */,
+				A49C44DE1F86635000A04E47 /* Router.swift */,
+				A49C44E01F86635C00A04E47 /* Model */,
 				A4FB71B71F862E5C003F065C /* Main.storyboard */,
 				A4FB71BA1F862E5C003F065C /* Assets.xcassets */,
 				A4FB71BC1F862E5C003F065C /* LaunchScreen.storyboard */,
@@ -462,7 +484,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49C44DF1F86635000A04E47 /* Router.swift in Sources */,
 				A4FB71B61F862E5C003F065C /* ViewController.swift in Sources */,
+				A49C44DD1F86387C00A04E47 /* Todo.swift in Sources */,
 				A4FB71B41F862E5C003F065C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
