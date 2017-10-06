@@ -119,6 +119,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A4EB86C21F8774CD009674BC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A49C44DE1F86635000A04E47 /* Router.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		A4FB71A71F862E5C003F065C = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +154,7 @@
 			children = (
 				A4FB71B31F862E5C003F065C /* AppDelegate.swift */,
 				A49C44E11F86637600A04E47 /* Controller */,
-				A49C44DE1F86635000A04E47 /* Router.swift */,
+				A4EB86C21F8774CD009674BC /* Utility */,
 				A49C44E01F86635C00A04E47 /* Model */,
 				A4FB71B71F862E5C003F065C /* Main.storyboard */,
 				A4FB71BA1F862E5C003F065C /* Assets.xcassets */,
