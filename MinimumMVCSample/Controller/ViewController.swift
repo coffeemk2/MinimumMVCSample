@@ -14,22 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    let realm = try! Realm()
-    var todos: Results<Todo>?
-    var notificationToken: NotificationToken? = nil
+    let model = TodoModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        todos = realm.objects(Todo.self)
-        // Observe Realm Notifications
-        notificationToken = todos?.addNotificationBlock({ [weak self] (changes) in
-            self?.tableView.reloadData()
-        })
-    }
-    
-    deinit {
-        notificationToken?.stop()
+        model.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,10 +28,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addButton(_ sender: Any) {
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add( Todo(text: self.textField.text!) )
-        }
+        model.addTodo(text: textField.text!)
         self.textField.text = ""
     }
     
@@ -50,29 +37,31 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        guard let todo = todos else { return cell }
+        guard let todo = model.todos else { return cell }
         cell.textLabel?.text = todo[indexPath.row].text
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todos?.count ?? 0
+        return model.todos?.count ?? 0
         
     }
-    
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool{
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            guard let todo = todos else { return }
-            try! realm.write {
-                realm.delete(todo[indexPath.row])
-            }
+            model.deleteTodo(index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+}
+
+extension ViewController: TodoModelProtocol{
+    func updateUI() {
+        self.tableView.reloadData()
     }
 }
 

@@ -10,6 +10,7 @@
 		59C31C8850E47ABF200BF176 /* Pods_MinimumMVCSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF26D98A2D2D8215795F89D /* Pods_MinimumMVCSample.framework */; };
 		A49C44DD1F86387C00A04E47 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C44DC1F86387C00A04E47 /* Todo.swift */; };
 		A49C44DF1F86635000A04E47 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49C44DE1F86635000A04E47 /* Router.swift */; };
+		A4EB86C61F8A16B1009674BC /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB86C51F8A16B1009674BC /* TodoModel.swift */; };
 		A4FB71B41F862E5C003F065C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FB71B31F862E5C003F065C /* AppDelegate.swift */; };
 		A4FB71B61F862E5C003F065C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FB71B51F862E5C003F065C /* ViewController.swift */; };
 		A4FB71B91F862E5C003F065C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4FB71B71F862E5C003F065C /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		A2AEF2D87E06B566ABC01B4C /* Pods-MinimumMVCSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinimumMVCSampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinimumMVCSampleUITests/Pods-MinimumMVCSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A49C44DC1F86387C00A04E47 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		A49C44DE1F86635000A04E47 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A4EB86C51F8A16B1009674BC /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		A4FB71B01F862E5C003F065C /* MinimumMVCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimumMVCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4FB71B31F862E5C003F065C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4FB71B51F862E5C003F065C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				A49C44DC1F86387C00A04E47 /* Todo.swift */,
+				A4EB86C51F8A16B1009674BC /* TodoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				A49C44DF1F86635000A04E47 /* Router.swift in Sources */,
 				A4FB71B61F862E5C003F065C /* ViewController.swift in Sources */,
 				A49C44DD1F86387C00A04E47 /* Todo.swift in Sources */,
+				A4EB86C61F8A16B1009674BC /* TodoModel.swift in Sources */,
 				A4FB71B41F862E5C003F065C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
