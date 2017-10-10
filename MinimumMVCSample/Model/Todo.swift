@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Todo: Object {
+class Todo: Object, Codable{
     @objc dynamic var id = 0
     @objc dynamic var text = ""
     @objc dynamic var completed = false
@@ -19,4 +19,10 @@ class Todo: Object {
         self.id = Int(arc4random_uniform(UINT32_MAX))
         self.text = text
     }
+    
+    override static func primaryKey()->String? {
+        return "text" // 普通はidで管理する
+    }
+    
 }
+

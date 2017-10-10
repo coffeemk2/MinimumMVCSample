@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         model.delegate = self
+        model.fetchTodos()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,11 +35,13 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         guard let todo = model.todos else { return cell }
-        cell.textLabel?.text = todo[indexPath.row].text
+        let attribute = todo[indexPath.row].completed ? [NSAttributedStringKey.strikethroughStyle : NSUnderlineStyle.styleSingle.rawValue] : nil
+        let attributedString = NSAttributedString(string: todo[indexPath.row].text , attributes: attribute)
+        cell.textLabel?.attributedText = attributedString
         return cell
         
     }
@@ -53,13 +56,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            model.deleteTodo(index: indexPath.row)
+            model.deleteTodo(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        model.toggleComplete(at: indexPath.row)
+    }
 }
 
-extension ViewController: TodoModelProtocol{
+extension ViewController: TodoModelProtocol {
     func updateUI() {
         self.tableView.reloadData()
     }
